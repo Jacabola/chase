@@ -1,0 +1,68 @@
+{"frames": {
+
+"_WALK_000.png":
+{
+	"frame": {"x":0,"y":0,"w":100,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":89},
+	"sourceSize": {"w":100,"h":89}
+},
+"_WALK_001.png":
+{
+	"frame": {"x":100,"y":0,"w":100,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":89},
+	"sourceSize": {"w":100,"h":89}
+},
+"_WALK_002.png":
+{
+	"frame": {"x":200,"y":0,"w":100,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":89},
+	"sourceSize": {"w":100,"h":89}
+},
+"_WALK_003.png":
+{
+	"frame": {"x":300,"y":0,"w":100,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":89},
+	"sourceSize": {"w":100,"h":89}
+},
+"_WALK_004.png":
+{
+	"frame": {"x":400,"y":0,"w":100,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":89},
+	"sourceSize": {"w":100,"h":89}
+},
+"_WALK_005.png":
+{
+	"frame": {"x":500,"y":0,"w":100,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":89},
+	"sourceSize": {"w":100,"h":89}
+},
+"_WALK_006.png":
+{
+	"frame": {"x":600,"y":0,"w":100,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":89},
+	"sourceSize": {"w":100,"h":89}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "knight-0.png",
+	"format": "RGBA8888",
+	"size": {"w":700,"h":89},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7f9105b858e0fc9eb582b404c27c6a67:a4502a1a14228f51161e247334204a3c:f5970902be0f0516785091a8942de8c8$"
+}
+}
