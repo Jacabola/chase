@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/phaser.min.js" type="text/javascript"></script>
+        <script>
+            var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', {preload: preload, create: create, update: update, render: render});
+
+            function preload() {
+                game.load.atlasJSONHash('bot', 'assets/img/running_bot.png', 'assets/img/running_bot.json');
+            }
+
+            var s;
+
+            function create() {
+
+                s = game.add.sprite(game.world.centerX, game.world.centerY, 'bot');
+                s.anchor.setTo(0.5, 0.5);
+                s.scale.setTo(2, 2);
+
+                s.animations.add('run');
+                s.animations.play('run', 10, true);
+
+            }
+
+            function update() {
+
+                if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
+                {
+                    s.x -= 4;
+                } else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
+                {
+                    s.x += 4;
+                }
+
+                if (game.input.keyboard.isDown(Phaser.Keyboard.UP))
+                {
+                    s.y -= 4;
+                } else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
+                {
+                    s.y += 4;
+                }
+
+            }
+
+            function render() {
+                game.debug.spriteInfo(s, 20, 32);
+
+            }
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
