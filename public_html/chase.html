@@ -12,107 +12,85 @@ and open the template in the editor.
         <script src="js/phaser.min.js" type="text/javascript"></script>
         <script>
 
-            var game = new Phaser.Game(1300, 768, Phaser.AUTO, '', {preload: preload, create: create, update: update});
+            var game = new Phaser.Game(1300, 650, Phaser.CANVAS, 'phaser-example', {preload: preload, create: create, update: update});
 
             var player;
             var cursors;
-
-//            var s;
+            var platforms;
 
             function preload() {
                 game.load.image('bg', 'assets/img/bg.png');
+                game.load.image('ground', 'assets/img/platform.png');
                 game.load.atlasJSONHash('player', 'assets/sprites/knight03.png', 'assets/sprites/knight03.json');
+                game.load.atlasJSONHash('player_jump', 'assets/sprites/knight03_jump.png', 'assets/sprites/knight03_jump.json');
             }
 
             function create() {
 
-
-
-//                s = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
-//                s.anchor.setTo(0.5, 0.5);
-//                s.scale.setTo(2, 2);
-//
-//                s.animations.add('run');
-//                s.animations.play('run', 10, true);
-
-
-
-
-
-
                 game.physics.startSystem(Phaser.Physics.ARCADE);
 
-                game.add.sprite(0, 0, 'bg');
+                game.add.tileSprite(0, 0, 3072, 650, 'bg');
+                game.world.setBounds(0, 0, 3072, 650);
 
-                player = game.add.sprite(32, game.world.height - 50, 'player');
 
+                platforms = game.add.group();
+
+                platforms.enableBody = true;
+                
+                var ground = platforms.create(0, game.world.height - 5, 'ground');
+                ground.scale.setTo(10, 0.2);
+                ground.body.immovable = true;
+
+
+                player = game.add.sprite(32, game.world.height - 150, 'player');
                 game.physics.arcade.enable(player);
 
                 player.frame = 3;
 
                 player.body.bounce.y = 0.2;
-                player.body.gravity.y = 300;
+                player.body.gravity.y = 1000;
                 player.body.collideWorldBounds = true;
 
-                player.animations.add('left', [0, 1, 2, 3, 4, 5, 6], 10, true);
-                player.animations.add('right', [0, 1, 2, 3, 4, 5, 6], 10, true);
+                player.animations.add('left', [0, 1, 2, 3, 4, 5, 6], 20, true);
+                player.animations.add('right', [0, 1, 2, 3, 4, 5, 6], 20, true);
 
                 cursors = game.input.keyboard.createCursorKeys();
 
+                game.camera.follow(player);
+
+                game.input.onDown.addOnce(change, this);
             }
 
             function update() {
+                game.physics.arcade.collide(player, platforms);
+                
                 player.body.velocity.x = 0;
 
-                if (cursors.left.isDown)
-                {
-                    //  Move to the left
-                    player.body.velocity.x = -150;
+                game.physics.arcade.collide(player);
 
+                if (cursors.left.isDown) {
+                    player.body.velocity.x = -200;
                     player.animations.play('left');
-                } else if (cursors.right.isDown)
-                {
-                    //  Move to the right
-                    player.body.velocity.x = 150;
-
+                } else if (cursors.right.isDown) {
+                    player.body.velocity.x = 200;
                     player.animations.play('right');
-                } else
-                {
-                    //  Stand still
+                } else {
                     player.animations.stop();
-
-                    player.frame = 4;
                 }
 
-                //  Allow the player to jump if they are touching the ground.
-                if (cursors.up.isDown && player.body.touching.down)
-                {
-                    player.body.velocity.y = -300;
+                if (cursors.up.isDown && player.body.touching.down) {
+                    player.body.velocity.y = -1000;
                 }
+            }
 
 
+            function change() {
 
-
-
-
-
-
-
-//                if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
-//                {
-//                    s.x -= 4;
-//                } else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
-//                {
-//                    s.x += 4;
-//                }
+//                player.loadTexture('player_jump', 0);
 //
-//                if (game.input.keyboard.isDown(Phaser.Keyboard.UP))
-//                {
-//                    s.y -= 4;
-//                } else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
-//                {
-//                    s.y += 4;
-//                }
+//                player.animations.add('walk');
+//
+//                player.animations.play('walk', 30, true);
 
             }
 
