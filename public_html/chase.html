@@ -17,12 +17,18 @@ and open the template in the editor.
             var player;
             var cursors;
             var platforms;
+            var goAttack = true;
+
+            var keyJump;
+            var keyAttack;
 
             function preload() {
                 game.load.image('bg', 'assets/img/bg.png');
                 game.load.image('ground', 'assets/img/platform.png');
-                game.load.atlasJSONHash('player', 'assets/sprites/knight03.png', 'assets/sprites/knight03.json');
-                game.load.atlasJSONHash('player_jump', 'assets/sprites/knight03_jump.png', 'assets/sprites/knight03_jump.json');
+                game.load.atlasJSONHash('player', 'assets/sprites/defector/defector.png', 'assets/sprites/defector/defector.json');
+                game.load.atlasJSONHash('player_attack', 'assets/sprites/defector/defector_attack.png', 'assets/sprites/defector/defector_attack.json');
+                game.load.image('player_jump', 'assets/sprites/knight03_pulo.png');
+//                game.load.atlasJSONHash('player_jump', 'assets/sprites/knight03_jump.png', 'assets/sprites/knight03_jump.json');
             }
 
             function create() {
@@ -36,9 +42,9 @@ and open the template in the editor.
                 platforms = game.add.group();
 
                 platforms.enableBody = true;
-                
+
                 var ground = platforms.create(0, game.world.height - 5, 'ground');
-                ground.scale.setTo(10, 0.2);
+                ground.scale.setTo(10, 0.2);15
                 ground.body.immovable = true;
 
 
@@ -56,14 +62,16 @@ and open the template in the editor.
 
                 cursors = game.input.keyboard.createCursorKeys();
 
+                keyJump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+                keyAttack = game.input.keyboard.addKey(Phaser.Keyboard.Z);
+
                 game.camera.follow(player);
 
-                game.input.onDown.addOnce(change, this);
             }
 
             function update() {
                 game.physics.arcade.collide(player, platforms);
-                
+
                 player.body.velocity.x = 0;
 
                 game.physics.arcade.collide(player);
@@ -78,25 +86,32 @@ and open the template in the editor.
                     player.animations.stop();
                 }
 
-                if (cursors.up.isDown && player.body.touching.down) {
-                    player.body.velocity.y = -1000;
+                if (keyJump.justPressed() && player.body.touching.down) {
+                    player.body.velocity.y = -350;
+                    player.loadTexture('player_jump', 0);
+                    player.animations.stop();
+
+                    setTimeout(function () {
+                        player.loadTexture('player', 0);
+                    }, 600);
                 }
+
+                if (keyAttack.justPressed() && goAttack) {
+                    goAttack = false;
+                    player.body.velocity.y = -200;
+                    player.loadTexture('player_attack', 0);
+                    
+                    setTimeout(function () {
+                        player.loadTexture('player', 0);
+                        goAttack = true;
+                    }, 400);
+                }
+
             }
 
-
-            function change() {
-
-//                player.loadTexture('player_jump', 0);
-//
-//                player.animations.add('walk');
-//
-//                player.animations.play('walk', 30, true);
-
-            }
 
         </script>
     </head>
     <body>
-        <div>TODO write content</div>
     </body>
 </html>

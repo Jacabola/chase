@@ -1,0 +1,116 @@
+{"frames": {
+
+"defect_attackA0001.png":
+{
+	"frame": {"x":0,"y":0,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0006.png":
+{
+	"frame": {"x":0,"y":150,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0007.png":
+{
+	"frame": {"x":0,"y":300,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0012.png":
+{
+	"frame": {"x":0,"y":450,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0013.png":
+{
+	"frame": {"x":0,"y":600,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0017.png":
+{
+	"frame": {"x":0,"y":750,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0023.png":
+{
+	"frame": {"x":0,"y":900,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0025.png":
+{
+	"frame": {"x":0,"y":1050,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0027.png":
+{
+	"frame": {"x":0,"y":1200,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0029.png":
+{
+	"frame": {"x":0,"y":1350,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0030.png":
+{
+	"frame": {"x":0,"y":1500,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0032.png":
+{
+	"frame": {"x":0,"y":1650,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+},
+"defect_attackA0033.png":
+{
+	"frame": {"x":0,"y":1800,"w":237,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":150},
+	"sourceSize": {"w":237,"h":150}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "defector_attack.png",
+	"format": "RGBA8888",
+	"size": {"w":237,"h":1950},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0df2b5fc0b1c2b7aa4196171aa664625:c409f4b3a3e71b6ad0d2a949c68952f9:f42bc5998423fbc3de01b0e0a4efe644$"
+}
+}
